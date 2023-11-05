@@ -4,20 +4,15 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class Deputies extends Human implements Comparable<Deputies>{
+   private String lastName;
 
-    Scanner scanner =  new Scanner(System.in);
+   private String firstName;
 
-    Main main = new Main(scanner);
+   private boolean bride;
 
-    String lastName;
+   private int sizeOfTheBride;
 
-    String firstName;
-
-    boolean bride;
-
-    int sizeOfTheBride;
-
-    int amount;
+   private int amount;
 
     public Deputies() {
     }
@@ -77,10 +72,7 @@ public class Deputies extends Human implements Comparable<Deputies>{
                 lastName, firstName, weight, height);
     }
 
-    public void giveBride(){
-
-        System.out.println("Введіть хабар");
-        amount = scanner.nextInt();
+    public void giveBride(int amount){
         if(!bride){
             System.out.println("Депутат " + lastName + " " + firstName + " не бере хабарів");
         }

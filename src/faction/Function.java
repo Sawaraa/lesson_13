@@ -6,18 +6,20 @@ import deputies.Main;
 import java.util.*;
 
 public class Function {
-    String name;
-    Scanner scanner = new Scanner(System.in);
-    Main main = new Main(scanner);
 
-    // Deputies deputies = new Deputies();
-    private static List<Deputies> listOfDeputies = new ArrayList<>();
+    String name;
+
+    Deputies deputies;
+   private static List<Deputies> listOfDeputies = new ArrayList<>();
 
     public Function(){}
 
+    public Function(Deputies deputies){
+        deputies = new Deputies();
+    }
+
     public Function(String name){
         this.name = name;
-        this.listOfDeputies = new ArrayList<>();
     }
 
     public String getName() {
@@ -28,9 +30,8 @@ public class Function {
         return listOfDeputies;
     }
 
-    public void add() {
-
-        System.out.println("Ведіть дані:" + "\n" + " Ім'я: ");
+    public void add(String firstName, String lastName, int weight, int height, int bride, int amount) {
+        /*System.out.println("Ведіть дані:" + "\n" + " Ім'я: ");
         String firstName = main.scanner.next();
         System.out.println("Призвіще: ");
         String lastName = main.scanner.next();
@@ -39,12 +40,12 @@ public class Function {
         System.out.println("Ріст: ");
         int height = main.scanner.nextInt();
         System.out.println("Хабар(оберіть 1.Правда або 2. Неправда): ");
-        int bride = main.scanner.nextInt();
-        Boolean newDeputies = (bride == 1) ? true : false;
+        int bride = main.scanner.nextInt();*/
+        boolean newDeputies = (bride == 1) ? true : false;
 
         Deputies newdeputies = new Deputies(firstName, lastName, weight, height, newDeputies);
 
-        newdeputies.giveBride();
+        newdeputies.giveBride(amount);
         listOfDeputies.add(newdeputies);
 
 
@@ -57,7 +58,7 @@ public class Function {
 
     }
 
-    public void remove() {
+    public void remove(String name, String lastName) {
 
         Iterator<Deputies> iterator = listOfDeputies.iterator();
 
@@ -66,16 +67,16 @@ public class Function {
             System.out.println(next);
         }
 
-        System.out.println("Напишіть ім'я та фамілію депутата якого хочете видалити");
+        /*System.out.println("Напишіть ім'я та фамілію депутата якого хочете видалити");
 
         String name = main.scanner.next();
-        String lastname = main.scanner.next();
+        String lastname = main.scanner.next();*/
 
         for (int i = 0; i < listOfDeputies.size(); i++) {
             Deputies deputies = listOfDeputies.get(i);
-            if (deputies.getFirstName().equalsIgnoreCase(name) && deputies.getLastName().equalsIgnoreCase(lastname)) {
+            if (deputies.getFirstName().equalsIgnoreCase(name) && deputies.getLastName().equalsIgnoreCase(lastName)) {
                 listOfDeputies.remove(i);
-                System.out.println("Депутат " + name + " " + lastname + " був видалений зі списку");
+                System.out.println("Депутат " + name + " " + lastName + " був видалений зі списку");
                 return;
             }
         }
