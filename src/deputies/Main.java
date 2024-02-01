@@ -63,27 +63,31 @@ public class Main {
 
                 }
                 case 6 :{
-                    System.out.println("Ведіть ім'я франкцію в яку хочете додати депутата");
-                    String name = scanner.next();
-                    Faction f = parliament.getFraction(name);
-                    System.out.println("Ведіть дані:" + "\n" + " Ім'я: ");
-                    String firstName = scanner.next();
-                    System.out.println("Призвіще: ");
-                    String lastName = scanner.next();
-                    System.out.println("Вага: ");
-                    int weight = scanner.nextInt();
-                    System.out.println("Ріст: ");
-                    int height = scanner.nextInt();
-                    System.out.println("Хабар(оберіть 1.Правда або 2. Неправда): ");
-                    int bride = scanner.nextInt();
-                    System.out.println("Введіть суму хабаря");
-                    int amount = scanner.nextInt();
-                    f.add(firstName, lastName, weight,height,bride,amount);
+                        System.out.println("Ведіть ім'я франкцію в яку хочете додати депутата");
+                        String name = scanner.next();
+                        Faction f = parliament.getFraction(name);
+                        System.out.println("Ведіть дані:" + "\n" + " Ім'я: ");
+                        String firstName = scanner.next();
+                        System.out.println("Призвіще: ");
+                        String lastName = scanner.next();
+                        System.out.println("Вага: ");
+                        int weight = scanner.nextInt();
+                        System.out.println("Ріст: ");
+                        int height = scanner.nextInt();
+                        System.out.println("Хабар(оберіть 1.Правда або 2. Неправда): ");
+                        int bride = scanner.nextInt();
+                        System.out.println("Введіть суму хабаря");
+                        int amount = scanner.nextInt();
+                        f.add(firstName, lastName, weight, height, bride, amount);
                     break;
                 }
                 case 7 :{
+                    Faction faction = new Faction();
+                    faction.output();
                     System.out.println("Ведіть ім'я франкції в якій хочете видалити депутата");
                     String name = scanner.next();
+                    System.out.println("Всі депутати в цій франкції:");
+                    faction.output();
                     Faction f = parliament.getFraction(name);
                     System.out.println("Ведіть дані:" + "\n" + " Ім'я: ");
                     String firstName = scanner.next();

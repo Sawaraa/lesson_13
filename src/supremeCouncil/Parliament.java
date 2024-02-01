@@ -26,51 +26,48 @@ public class Parliament {
             if (f.getName().equalsIgnoreCase(name))
                 return f;
         }
-        return null;
+        return null ;
     }
 
     public void add(String name){
         Faction faction = new Faction(name);
         listOffactions.add(faction);
         System.out.println("Ви успішно добавили фракцію");
-        Iterator<Faction> iterator = listOffactions.iterator();
 
-        while (iterator.hasNext()) {
-            Faction next = iterator.next();
-            System.out.println(next);
-        }
+        listOffactions.stream().forEach(System.out::println);
+//        Iterator<Faction> iterator = listOffactions.iterator();
+//
+//        while (iterator.hasNext()) {
+//            Faction next = iterator.next();
+//            System.out.println(next);
+//        }
     }
 
     public void remove(String deleteName){
 
-        Iterator<Faction> iterator1 = listOffactions.iterator();
-        while (iterator1.hasNext()) {
-            Faction next = iterator1.next();
-            System.out.println(next);
-        }
-
-        for (int i = 0; i < listOffactions.size(); i++) {
-            faction1 = listOffactions.get(i);
-            if (faction1.getName().equalsIgnoreCase(deleteName)) {
-                listOffactions.remove(i);
-
-                System.out.println("Франкція " + deleteName + " була видалена зі списку");
-                System.out.println("Список франкції які залишились");
-
-                Iterator<Faction> iterator2 = listOffactions.iterator();
-                while (iterator2.hasNext()) {
-                    Faction next = iterator2.next();
-                    System.out.println(next);
-                }
-            }
-            else {System.out.println("Такої франкції не існує");}
-        }
+//        for (int i = 0; i < listOffactions.size(); i++) {
+//            faction1 = listOffactions.get(i);
+//            if (faction1.getName().equalsIgnoreCase(deleteName)) {
+//                listOffactions.remove(i);
+//
+//                System.out.println("Франкція " + deleteName + " була видалена зі списку");
+//                System.out.println("Список франкції які залишились");
+//
+//                Iterator<Faction> iterator2 = listOffactions.iterator();
+//                while (iterator2.hasNext()) {
+//                    Faction next = iterator2.next();
+//                    System.out.println(next);
+//                }
+//            }
+//            else {System.out.println("Такої франкції не існує");}
+//        }
     }
 
     public void output(){
-        for (Faction function1 : listOffactions) {
-            System.out.println(function1);
-        }
+        listOffactions.stream().forEach(faction -> System.out.println(faction));
+//        for (Faction function1 : listOffactions) {
+//            System.out.println(function1);
+//        }
     }
 
     public void clear(String outputName){

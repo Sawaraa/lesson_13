@@ -3,7 +3,9 @@ package deputies;
 import java.util.Comparator;
 import java.util.Scanner;
 
-public class Deputies extends Human implements Comparable<Deputies>{
+public class Deputies extends Human {
+
+    //implements Comparable<Deputies>
    private String lastName;
 
    private String firstName;
@@ -87,9 +89,9 @@ public class Deputies extends Human implements Comparable<Deputies>{
         }
 
     }
-    @Override
-    public int compareTo(Deputies o) {
-        return Integer.compare(this.getAmount(), o.getAmount());
-    }
+//    @Override
+//    public int compareTo(Deputies o) {
+//        return Integer.compare(this.getAmount(), o.getAmount());
+//    }
 
 }
